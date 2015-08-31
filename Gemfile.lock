@@ -21,7 +21,7 @@ PLATFORMS
 
 DEPENDENCIES
   rspec
-  rspec-core
+  rspec-mocks
 
 BUNDLED WITH
    1.10.6

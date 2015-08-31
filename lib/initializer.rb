@@ -1,3 +1,5 @@
 require_relative "automatizer"
 
-Automatizer.new
+Automatizer.run_gulp
+Automatizer.run_vim
+Automatizer.root_directory

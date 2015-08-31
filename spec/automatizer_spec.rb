@@ -2,33 +2,24 @@ require './lib/automatizer'
 
 describe Automatizer do
 
-  a = Automatizer.new
+  a = Automatizer
 
-  it 'should go on the right directory' do
-    allow(a).to receive(:system).with("cd /applications/MAMP/htdocs/store/htdocs/content/themes/DettacheeStoreSB/config")
-    expect(`pwd`).to eq "/applications/MAMP/htdocs/store/htdocs/content/themes/DettacheeStoreSB/config"
-    a.cd_config
+  before (:each) do
+    allow(a).to receive(:run_gulp).and_return true
+    allow(a).to receive(:run_vim).and_return true
+    allow(a).to receive(:root_directory).and_return true
   end
 
-  # it 'should start gulp' do
-  #   expect(a).to receive(:system).with("gulp")
-  #   a.gulp
-  # end
-  #
-   it 'should open a new tab '  do
-     expect(a).to receive(:system).with("osascript -e 'tell application \"iTerm\"' -e 'make new terminal' -e 'tell the first terminal' -e 'activate current session' -e 'launch session \"Default Session\"' -e 'end tell' -e 'end tell' > /dev/null 2>&1")
-     a.newtab
-   end
-  #
-  # it 'should go to the project directory' do
-  #   expect(a).to receive(:system).with("cd /applications/MAMP/htdocs/store")
-  #   a.cd_project
-  # end
-  #
-  # it 'should open the project with vim' do
-  #   expect(a).to receive(:system).with("vim .")
-  #   a.vim_opener
-  # end
+  it 'should run the run_gulp method and_return true' do
+    expect(a.run_gulp).to eq true
+  end
 
+  it 'should run the run_vim method and_return true'  do
+    expect(a.run_vim).to eq true
+  end
+
+  it 'should run the root_directory method and_return true'  do
+   expect(a.root_directory).to eq true
+  end
 
 end
