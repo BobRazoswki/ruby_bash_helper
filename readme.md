@@ -1,4 +1,4 @@
-### Ruby_bash_helper
+# Ruby_bash_helper
 
 I always found my self writting aliases to make my life easier.
 It became messy as soon as I needed to execute AppleScript in it.
@@ -13,7 +13,7 @@ For now it is only for one project and what it does is:
 
 I hope I'll make it grow for other projects!
 
-#Technologies
+###Technologies
 - Ruby
 - Rspec
 - Osascript
